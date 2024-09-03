@@ -1,9 +1,13 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+// TEST PATTERN: AAA (Arrange, Act, Assert )
+// Arrange
+import App from "./App";
+import { render, screen } from "@testing-library/react"; // rtl 
 
-test('renders learn react link', () => {
+// Act
+test("renders heading with Welcome to Unit Testing React App", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const element = screen.getByText("Welcome to Unit Testing React app!!!"); 
+  
+  // assert -- MUST
+  expect(element).toBeInTheDocument();
 });
